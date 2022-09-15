@@ -10,6 +10,6 @@
 }
 
 .table tr:nth-of-type(odd) {
-    background-color: rgb(243, 124, 124);
+    background-color: gray;
     color: white;
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 // * Component Imported
 import InfoBox from "./components/InfoBox";
+import LineGraph from "./components/LineGraph";
 import Map from "./components/Map"
 import Table from "./components/Table";
 
@@ -11,6 +12,7 @@ function App() {
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [table, setTable] = useState([]);
+  const [casesType, setCasesType] = useState("cases");
 
   useEffect(() => {
     //* This use effect run on the first time page render
@@ -36,6 +38,7 @@ function App() {
             value: country.countryInfo.iso2,
           }));
           //* Set countries
+          
           setCountries(countries);
           setTable(data);
         });
@@ -98,7 +101,7 @@ function App() {
           <h3>Live Cases By Country</h3>
           <Table countries={table}/>
           <h3> Worldwide new cases</h3>
-          {/* Graph */}
+          <LineGraph casesType={casesType}/>
         </CardContent>
       </Card>
     </div>
